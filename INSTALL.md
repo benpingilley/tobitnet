@@ -67,6 +67,6 @@ library(tobitnet)
 fit <- tobitnet(x, y, left = 0, right = 1, ...)
 
 # One-sided (backward compatible)
-fit <- tobitnet(x, y, left = 0, right = Inf, ...)
+fit <- tobitnet(x, y, left = 0, right = 1e10, ...)
 ```
 
