@@ -64,7 +64,8 @@ tobitscad = function(x, y, c = 0, a = 3, iter = 3, nlambda = 100, lambda.factor 
             pfs = dscad(abs(delta[,l]), lambda = l1, a = a)/l1 
             
             #pass to tobitnet_innerC so pf1 can vary with lambda
-            tn = tobitnet_innerC(xin = x, yin = y, cin = c, lambda1 = l1, lambda2 = 0, pf1 = pfs, pf2 = rep(1, p),
+            # For backward compatibility with one-sided censoring, pass large right bound
+            tn = tobitnet_innerC(xin = x, yin = y, cin = c, uin = Inf, lambda1 = l1, lambda2 = 0, pf1 = pfs, pf2 = rep(1, p),
                                  delta_0_init = delta_0_init, delta_init = delta_init, gamma_init = gamma_init,
                                  eps = eps, standardize = standardize, maxit = maxit)
             if(!tn$KKT) warning("KKT conditions not satisfied. Try decreasing eps or increasing maxit.")
