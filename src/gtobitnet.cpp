@@ -210,7 +210,7 @@ List standardizeC(NumericMatrix x){
 }
 
 //[[Rcpp::export]]
-List tobitnet_innerC(NumericMatrix xin, NumericVector yin, NumericVector cin, NumericVector uin, double lambda1, double lambda2, NumericVector pf1, NumericVector pf2, NumericVector delta_init, double delta_0_init = 0, double gamma_init = 1, double eps = 1e-7, bool standardize = true, double maxit = 1e6){
+List gtobitnet_innerC(NumericMatrix xin, NumericVector yin, NumericVector cin, NumericVector uin, double lambda1, double lambda2, NumericVector pf1, NumericVector pf2, NumericVector delta_init, double delta_0_init = 0, double gamma_init = 1, double eps = 1e-7, bool standardize = true, double maxit = 1e6){
 	NumericMatrix x = clone(xin);
 	NumericVector y = clone(yin);
 	NumericVector c = clone(cin);
