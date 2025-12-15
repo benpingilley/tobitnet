@@ -134,8 +134,9 @@ double newton_gamma_two_sided(double gamma, NumericVector y, IntegerVector statu
             gamma_new = 0.5 * gamma;
         }
 
-        // convergence check (relative)
-        if(std::abs(step) < tol * std::max(1.0, gamma)){
+        // convergence check (relative) - use actual change in gamma, not raw Newton step
+        double actual_step = gamma - gamma_new;
+        if(std::abs(actual_step) < tol * std::max(1.0, gamma)){
             gamma = gamma_new;
             break;
         }
