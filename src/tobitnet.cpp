@@ -95,6 +95,11 @@ NumericVector logL2(NumericVector y, IntegerVector status, NumericVector r, doub
 }
 
 double newton_gamma_two_sided(double gamma, NumericVector y, IntegerVector status, NumericVector r, double R, int max_newton = 30, double tol = 1e-10){
+    // Guard against non-positive gamma to prevent division by zero
+    if(gamma <= 0 || !R_finite(gamma)){
+        return 1e-6;  // return small positive default
+    }
+    
     for(int it = 0; it < max_newton; it++){
         double grad = 0.0;
         double hess = 0.0;
