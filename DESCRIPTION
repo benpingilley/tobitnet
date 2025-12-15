@@ -2,8 +2,19 @@ Package: gtobitnet
 Version: 1.0.0
 Date: 2022-02-18
 Title: Penalized gTobit Regression
-Authors@R: c( person("Tate", "Jacobson", email = "jaco2583@umn.edu", role = c("aut", "cre") ),
-			  person("Hui", "Zou", role = c("ths") ))
+Authors@R: c(
+  person("Tate", "Jacobson",
+         email = "jaco2583@umn.edu",
+         role = c("aut", "cre")),
+  person("Chanwool", "Kim",
+         role = "aut"),
+  person("Ben", "Pingilley",
+         email = "ben.pingilley@gmail.com",
+         role = "aut"),
+  person("Hui", "Zou",
+         role = "ths")
+)
+
 Depends: R (>= 4.0.0)
 LinkingTo: Rcpp
 Suggests: MASS, AER
